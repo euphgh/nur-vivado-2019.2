@@ -51,7 +51,8 @@ let
       source $stdenv/setup
 
       mkdir -p $out/
-      tar -xvf $src --strip-components=1 -C $out/ Xilinx_Vivado_2019.2_1106_2127.tar.gz/
+      tar -xvf $src --strip-components=1 -C $out/
+      # tar -xvf $src --strip-components=1 -C $out/ Xilinx_Vivado_2019.2_1106_2127.tar.gz/
 
       patchShebangs $out/
       patchelf --set-interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" \

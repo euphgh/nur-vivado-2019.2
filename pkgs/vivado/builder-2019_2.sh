@@ -95,8 +95,12 @@ sed -i -- 's|/bin/touch|/usr/bin/env touch|g' $out/opt/Vivado/2019.2/scripts/ISE
 sed -i -- "s|$extracted|/nix/store/00000000000000000000000000000000-vivado-2019.2-extracted|g" $out/opt/.xinstall/Vivado_2019.2/data/instRecord.dat
 sed -i -- "s|$extracted|/nix/store/00000000000000000000000000000000-vivado-2019.2-extracted|g" $out/opt/.xinstall/Vivado_2019.2/xinstall.log
 sed -i -- "s|$extracted|/nix/store/00000000000000000000000000000000-vivado-2019.2-extracted|g" $out/opt/.xinstall/xic/data/instRecord.dat
-sed -i -- "s|$extracted|/nix/store/00000000000000000000000000000000-vivado-2019.2-extracted|g" $out/opt/.xinstall/DocNav/data/instRecord.dat
+# sed -i -- "s|$extracted|/nix/store/00000000000000000000000000000000-vivado-2019.2-extracted|g" $out/opt/.xinstall/DocNav/data/instRecord.dat
+
+echo "sed patched"
 
 # Add Vivado and xsdk to bin folder
 mkdir $out/bin
 ln -s $out/opt/Vivado/2019.2/bin/vivado $out/bin/vivado
+
+echo "finish builder"
